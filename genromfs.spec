@@ -10,7 +10,6 @@ License:	GPL
 Group:		System/Kernel and hardware
 Source:		http://unc.dl.sourceforge.net/sourceforge/romfs/%{name}-%{version}.tar.gz
 URL:		http://romfs.sourceforge.net
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Genromfs is a tool for creating romfs filesystems, which are
