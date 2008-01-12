@@ -1,6 +1,6 @@
 %define name genromfs
 %define version 0.5.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Tool for creating romfs filesystems
 Name:		%{name}
