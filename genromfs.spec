@@ -24,12 +24,12 @@ kernel.
 make CFLAGS="$RPM_OPT_FLAGS -DVERSION=\\\"%{version}\\\""
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -m 0755 %{name} -D $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -m 0644 %{name}.8 -D $RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
+rm -rf %{buildroot}
+install -m 0755 %{name} -D %{buildroot}%{_bindir}/%{name}
+install -m 0644 %{name}.8 -D %{buildroot}%{_mandir}/man8/%{name}.8
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
