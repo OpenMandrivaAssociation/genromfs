@@ -1,16 +1,11 @@
-%define name genromfs
-%define version 0.5.2
-%define release %mkrel 8
-
 Summary:	Tool for creating romfs filesystems
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		genromfs
+Version:	0.5.2
+Release:	9
 License:	GPL
 Group:		System/Kernel and hardware
-Source:		http://unc.dl.sourceforge.net/sourceforge/romfs/%{name}-%{version}.tar.gz
+Source0:	http://unc.dl.sourceforge.net/sourceforge/romfs/%{name}-%{version}.tar.gz
 URL:		http://romfs.sourceforge.net
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Genromfs is a tool for creating romfs filesystems, which are
@@ -21,25 +16,21 @@ kernel.
 %setup -q
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS -DVERSION=\\\"%{version}\\\""
+make CFLAGS="%{optflags} -DVERSION=\\\"%{version}\\\""
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -m 0755 %{name} -D $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -m 0644 %{name}.8 -D $RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+install -m0755 %{name} -D %{buildroot}%{_bindir}/%{name}
+install -m0644 %{name}.8 -D %{buildroot}%{_mandir}/man8/%{name}.8
 
 %files
-%defattr(-,root,root)
-%doc romfs.txt COPYING ChangeLog NEWS
+%doc romfs.txt COPYING NEWS
 %{_bindir}/*
 %{_mandir}/man8/*
 
-
-
 %changelog
+* Thu Feb 14 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.5.2-9
+- cleanups
+
 * Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.5.2-8mdv2011.0
 + Revision: 664821
 - mass rebuild
