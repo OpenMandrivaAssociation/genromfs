@@ -16,7 +16,7 @@ kernel.
 %setup -q
 
 %build
-make CFLAGS="%{optflags} -DVERSION=\\\"%{version}\\\""
+make CFLAGS="%{optflags} -DVERSION=\\\"%{version}\\\"" LDFLAGS="%{ldflags}"
 
 %install
 install -m0755 %{name} -D %{buildroot}%{_bindir}/%{name}
@@ -29,6 +29,7 @@ install -m0644 %{name}.8 -D %{buildroot}%{_mandir}/man8/%{name}.8
 
 %changelog
 * Thu Feb 14 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.5.2-9
+- pass ldflags
 - cleanups
 
 * Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.5.2-8mdv2011.0
