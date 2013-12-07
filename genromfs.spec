@@ -1,7 +1,7 @@
 Summary:	Tool for creating romfs filesystems
 Name:		genromfs
 Version:	0.5.2
-Release:	9
+Release:	10
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://romfs.sourceforge.net
