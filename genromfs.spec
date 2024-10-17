@@ -4,7 +4,7 @@ Version:	0.5.2
 Release:	19
 License:	GPLv2
 Group:		System/Kernel and hardware
-Url:		http://romfs.sourceforge.net
+Url:		https://romfs.sourceforge.net
 Source0:	http://unc.dl.sourceforge.net/sourceforge/romfs/%{name}-%{version}.tar.gz
 
 %description
