@@ -7,6 +7,7 @@ Group:		System/Kernel and hardware
 Url:		https://romfs.sourceforge.net
 Source0:	http://unc.dl.sourceforge.net/sourceforge/romfs/%{name}-%{version}.tar.gz
 
+BuildRequires:	make
 %description
 Genromfs is a tool for creating romfs filesystems, which are
 lightweight, read-only filesystems supported by the Linux
